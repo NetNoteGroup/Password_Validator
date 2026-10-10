@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Validator</title>
+</head>
+<body>
+  <h2>Password Validator</h2>
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button onclick="checkPassword()">Validate</button>
+  <p id="result"></p>
+
+  <script>
+    function validatePassword(password) {
+      const minLength = 8;
+      const hasUpperCase = /[A-Z]/;
+      const hasLowerCase = /[a-z]/;
+      const hasDigit = /[0-9]/;
+      const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
+
+      if (password.length < minLength) {
+        return "Password must be at least 8 characters long.";
+      }
+      if (!hasUpperCase.test(password)) {
+        return "Password must include at least one uppercase letter.";
+      }
+      if (!hasLowerCase.test(password)) {
+        return "Password must include at least one lowercase letter.";
+      }
+      if (!hasDigit.test(password)) {
+        return "Password must include at least one number.";
+      }
+      if (!hasSpecialChar.test(password)) {
+        return "Password must include at least one special character.";
+      }
+
+      return "Password is valid!";
+    }
+
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      const result = validatePassword(password);
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>
