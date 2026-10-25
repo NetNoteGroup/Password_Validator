@@ -19,7 +19,7 @@ Follow these steps to set up and explore the validator locally.
 ### Prerequisites
 You only need a modern web browser (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari) to run this project.
 
-### 🔧 Installation & Setup
+###  Installation & Setup
 
 1. **Clone the repository:**
    ```bash
